@@ -1,6 +1,6 @@
 param(
     # overwrite upstream param
-    [String]$upstream = "so1ve/destiny:main"
+    [String]$upstream = "so1ve/destiny:master"
 )
 
 if(!$env:SCOOP_HOME) { $env:SCOOP_HOME = Resolve-Path (scoop prefix scoop) }
