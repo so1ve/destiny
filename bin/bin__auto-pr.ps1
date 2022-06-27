@@ -60,9 +60,11 @@ param(
     [Switch] $ThrowError
 )
 
-. "$PSScriptRoot\..\lib\manifest.ps1"
-. "$PSScriptRoot\..\lib\json.ps1"
-. "$PSScriptRoot\..\lib\unix.ps1"
+$ScoopHome = Resolve-Path (scoop prefix scoop)
+
+. "$ScoopHome\lib\manifest.ps1"
+. "$ScoopHome\lib\json.ps1"
+. "$ScoopHome\lib\unix.ps1"
 
 $Dir = Resolve-Path $Dir
 if ((!$Push -and !$Request) -or $Help) {
@@ -162,11 +164,11 @@ if ($Push) {
     execute "hub push origin $OriginBranch"
 }
 
-. "$PSScriptRoot\checkver.ps1" -App $App -Dir $Dir -Update -SkipUpdated:$SkipUpdated -ThrowError:$ThrowError
+. "$ScoopHome\bin\checkver.ps1" -App $App -Dir $Dir -Update -SkipUpdated:$SkipUpdated -ThrowError:$ThrowError
 if ($SpecialSnowflakes) {
     Write-Host "Forcing update on our special snowflakes: $($SpecialSnowflakes -join ',')" -ForegroundColor DarkCyan
     $SpecialSnowflakes -split ',' | ForEach-Object {
-        . "$PSScriptRoot\checkver.ps1" $_ -Dir $Dir -ForceUpdate -ThrowError:$ThrowError
+        . "$ScoopHome\bin\checkver.ps1" $_ -Dir $Dir -ForceUpdate -ThrowError:$ThrowError
     }
 }
 
