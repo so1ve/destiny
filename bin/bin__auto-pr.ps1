@@ -200,6 +200,7 @@ hub diff --name-only | ForEach-Object {
     if ($Push) {
         Write-Host "Creating update $app ($version) ..." -ForegroundColor DarkCyan
         execute "hub add $manifest"
+        execute "hub add $versions_folder_path"
 
         # detect if file was staged, because it's not when only LF or CRLF have changed
         $status = execute 'hub status --porcelain -uno'
