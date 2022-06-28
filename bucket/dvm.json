@@ -9,12 +9,6 @@
             "hash": "3419989e107da4643d1222511c13559a3a8cfa83f032dfe76e83e8785ad9d050"
         }
     },
-    "installer": {
-        "script": [
-            "[Environment]::SetEnvironmentVariable('DENO_INSTALL', \"$persist_dir\\.deno\", 'Process')",
-            "[Environment]::SetEnvironmentVariable('DVM_DIR', \"$persist_dir\\.dvm\", 'Process')"
-        ]
-    },
     "env_add_path": ".dvm\\bin",
     "env_set": {
         "DENO_INSTALL": "$persist_dir\\.deno",
