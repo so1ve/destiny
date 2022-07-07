@@ -22,6 +22,10 @@ jobs:
           dir
           dir destiny_versions
           dir destiny_versions/bucket
+          cd destiny_versions
+          git add -A
+          git commit -m "chore: sync versions"
+          cd ..
       - name: Push Versions
         uses: ad-m/github-push-action@master
         with:
