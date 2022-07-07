@@ -17,7 +17,7 @@ jobs:
           SKIP_UPDATED: "1"
       - name: Sync Versions
         run: |
-          git clone https://github.com/so1ve/destiny_versions.git
+          git clone https://github.com/ScoopDestiny/destiny_versions.git
           rm -R ./destiny_versions/bucket
           dir
           dir destiny_versions
@@ -27,11 +27,11 @@ jobs:
           dir destiny_versions/bucket
           cd destiny_versions
           git add -A
-          git commit -m "chore: sync versions"
+          git commit -m "sync versions"
           cd ..
       - name: Push Versions
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GH_TOKEN }}
           directory: "./destiny_versions"
-          repository: so1ve/destiny_versions
+          repository: ScoopDestiny/destiny_versions
