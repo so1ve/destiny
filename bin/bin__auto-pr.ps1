@@ -187,7 +187,7 @@ hub diff --name-only | ForEach-Object {
     }
     $version = $json.version
 
-    $versions_folder_path = ([System.IO.Path]::Join($Dir, "$app@$version.json"))
+    $versions_folder_path = ([System.IO.Path]::Join($Dir, "..", "versions", "$app@$version.json"))
     Write-Host $versions_folder_path
     Write-Host $json | ConvertToPrettyJson
     $pretty_json = $json | ConvertToPrettyJson
