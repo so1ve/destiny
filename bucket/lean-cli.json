@@ -1,0 +1,30 @@
+{
+    "version": "1.0.1",
+    "description": "LeanEngine Command Line Tool",
+    "homepage": "https://leancloud.cn/docs/leanengine_cli.html",
+    "license": "Apache-2.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/leancloud/lean-cli/releases/download/v1.0.1/lean-windows-x64.exe#/lean.exe",
+            "hash": "13d552b257972917115c986dbbb03ca5d7793a53ebb1ea42a87a22e7d5d1693f"
+        },
+        "32bit": {
+            "url": "https://github.com/leancloud/lean-cli/releases/download/v1.0.1/lean-windows-x86.exe#/lean.exe",
+            "hash": "50d7cf5490b50cf7a74b0f20be3ac30477177c750bfdef10d3f4bf76af1688ad"
+        }
+    },
+    "bin": "lean.exe",
+    "checkver": {
+        "github": "https://github.com/leancloud/lean-cli"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/leancloud/lean-cli/releases/download/v$version/lean-windows-x64.exe#/lean.exe"
+            },
+            "32bit": {
+                "url": "https://github.com/leancloud/lean-cli/releases/download/v$version/lean-windows-x86.exe#/lean.exe"
+            }
+        }
+    }
+}

@@ -1,0 +1,37 @@
+{
+    "version": "8.12.2",
+    "description": "A demand-driven, horizontally threaded image processing library",
+    "homepage": "https://www.libvips.org/",
+    "license": "LGPL-2.1-only",
+    "architecture": {
+        "64bit": {
+            "hash": "e550fa5d63fd80fc09013e932fe927211b38c6b419c662bf54ee614a8117d347",
+            "url": "https://github.com/libvips/build-win64-mxe/releases/download/v8.12.2/vips-dev-w64-all-8.12.2.zip"
+        },
+        "32bit": {
+            "hash": "8f6ab9db2f7661450e4c9ca75b2c1e96c9f279c06cd527e1ad81607ce21b0c41",
+            "url": "https://github.com/libvips/build-win64-mxe/releases/download/v8.12.2/vips-dev-w32-all-8.12.2.zip"
+        }
+    },
+    "extract_dir": "vips-dev-8.12",
+    "bin": [
+        "bin\\vips.exe",
+        "bin\\vipsedit.exe",
+        "bin\\vipsheader.exe",
+        "bin\\vipsthumbnail.exe"
+    ],
+    "checkver": {
+        "github": "https://github.com/libvips/build-win64-mxe"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/libvips/build-win64-mxe/releases/download/v$version/vips-dev-w64-all-$version.zip"
+            },
+            "32bit": {
+                "url": "https://github.com/libvips/build-win64-mxe/releases/download/v$version/vips-dev-w32-all-$version.zip"
+            }
+        },
+        "extract_dir": "vips-dev-$majorVersion.$minorVersion"
+    }
+}

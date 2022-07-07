@@ -1,0 +1,52 @@
+{
+    "version": "1.18.3",
+    "description": "An open source programming language that makes it easy to build simple, reliable, and efficient software.",
+    "homepage": "https://golang.org",
+    "license": "BSD-3-Clause",
+    "notes": [
+        "Your GOROOT has been set to: $dir",
+        "You can run 'go env GOROOT' to view this at any time.",
+        "\"$env:USERPROFILE\\go\\bin\" has been added to your PATH."
+    ],
+    "architecture": {
+        "64bit": {
+            "url": "https://dl.google.com/go/go1.18.3.windows-amd64.zip",
+            "hash": "9c46023f3ad0300fcfd1e62f2b6c2dfd9667b1f2f5c7a720b14b792af831f071"
+        },
+        "32bit": {
+            "url": "https://dl.google.com/go/go1.18.3.windows-386.zip",
+            "hash": "6661798e9669c3f03498a2e018ed948d9f53a90c5ccbd05b4e4b36303facb33e"
+        }
+    },
+    "extract_dir": "go",
+    "installer": {
+        "script": "add_first_in_path \"$env:USERPROFILE\\go\\bin\" $global"
+    },
+    "uninstaller": {
+        "script": "remove_from_path \"$env:USERPROFILE\\go\\bin\" $global"
+    },
+    "bin": [
+        "bin\\go.exe",
+        "bin\\gofmt.exe"
+    ],
+    "env_set": {
+        "GOROOT": "$dir"
+    },
+    "checkver": {
+        "url": "https://golang.org/dl/",
+        "regex": "go([\\d.]+)\\.windows-"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://dl.google.com/go/go$version.windows-amd64.zip"
+            },
+            "32bit": {
+                "url": "https://dl.google.com/go/go$version.windows-386.zip"
+            }
+        },
+        "hash": {
+            "url": "$url.sha256"
+        }
+    }
+}

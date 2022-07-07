@@ -1,0 +1,21 @@
+{
+    "version": "0.6.0",
+    "description": "Run multiple commands in parallel",
+    "homepage": "https://github.com/pvolok/mprocs",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/pvolok/mprocs/releases/download/v0.6.0/mprocs-0.6.0-win64.zip",
+            "hash": "d244f4ad7a7c29b5f3b6ce781f697689caa8fb947dffee616c262ab5052581bb"
+        }
+    },
+    "bin": "mprocs.exe",
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/pvolok/mprocs/releases/download/v$version/mprocs-$version-win64.zip"
+            }
+        }
+    }
+}

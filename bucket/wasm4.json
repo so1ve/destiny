@@ -1,0 +1,23 @@
+{
+    "version": "2.5.0",
+    "description": "Build retro games using WebAssembly for a fantasy console.",
+    "homepage": "https://wasm4.org/",
+    "license": "ISC",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/aduros/wasm4/releases/download/v2.5.0/w4-windows.zip",
+            "hash": "d2f7139b73b39a62ee069a1a1b6fddee8508c059cd6693031f43083a877b2422"
+        }
+    },
+    "bin": "w4.exe",
+    "checkver": {
+        "github": "https://github.com/aduros/wasm4"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/aduros/wasm4/releases/download/v$version/w4-windows.zip"
+            }
+        }
+    }
+}

@@ -1,0 +1,40 @@
+{
+    "version": "2022.06.29",
+    "description": "A youtube-dl fork with additional features and fixes.",
+    "homepage": "https://github.com/yt-dlp/yt-dlp",
+    "license": "Unlicense",
+    "suggest": {
+        "ffmpeg": "ffmpeg"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/yt-dlp/yt-dlp/releases/download/2022.06.29/yt-dlp.exe",
+            "hash": "sha512:079092802d5f7af695515a30624a8c4c496736c78e0d332c010da29b899ab184225c87037c0b21bba007ff10e320afc23e52f4c5ae8b954e71b698dde5b9b40f"
+        },
+        "32bit": {
+            "url": "https://github.com/yt-dlp/yt-dlp/releases/download/2022.06.29/yt-dlp_x86.exe#/yt-dlp.exe",
+            "hash": "sha512:1a985fa62fa78d491652cef182d47285f132903d3e98e9fdcc79d80732f671fab1c7bebc199e7db460051d0fb803072883c9853e1021ce120ce5687290ebecd6"
+        }
+    },
+    "bin": "yt-dlp.exe",
+    "pre_install": [
+        "$manifest.persist | ForEach-Object {",
+        "    if (-not (Test-Path \"$persist_dir\\$_\")) { New-Item \"$dir\\$_\" -ItemType file | Out-Null }",
+        "}"
+    ],
+    "persist": "yt-dlp.conf",
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/yt-dlp/yt-dlp/releases/download/$version/yt-dlp.exe"
+            },
+            "32bit": {
+                "url": "https://github.com/yt-dlp/yt-dlp/releases/download/$version/yt-dlp_x86.exe#/yt-dlp.exe"
+            }
+        },
+        "hash": {
+            "url": "$baseurl/SHA2-512SUMS"
+        }
+    }
+}

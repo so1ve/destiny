@@ -1,0 +1,66 @@
+{
+    "version": "5.1.0.20220510",
+    "description": "Open Source OCR Engine",
+    "homepage": "https://github.com/UB-Mannheim/tesseract/wiki",
+    "license": "Apache-2.0",
+    "notes": [
+        "Recognition data files can be installed via \"scoop install tesseract-languages\"",
+        "or downloaded manually from https://github.com/tesseract-ocr/tessdata_fast"
+    ],
+    "suggest": {
+        "tesseract-languages": "tesseract-languages"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-w64-setup-v5.1.0.20220510.exe#/dl.7z",
+            "hash": "f0bbfdac107b021867b3a8c985ab8e81f0e3e58ad161c0dfab02d53d7f318878"
+        },
+        "32bit": {
+            "url": "https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-w32-setup-v5.1.0.20220510.exe#/dl.7z",
+            "hash": "2adff57eb5a613da1e3d1e41279577986b0d266a51ea7be5baa49dea0765b862"
+        }
+    },
+    "bin": [
+        "ambiguous_words.exe",
+        "classifier_tester.exe",
+        "cntraining.exe",
+        "combine_lang_model.exe",
+        "combine_tessdata.exe",
+        "dawg2wordlist.exe",
+        "lstmeval.exe",
+        "lstmtraining.exe",
+        "merge_unicharsets.exe",
+        "mftraining.exe",
+        "set_unicharset_properties.exe",
+        "shapeclustering.exe",
+        "tesseract.exe",
+        "text2image.exe",
+        "unicharset_extractor.exe",
+        "wordlist2dawg.exe"
+    ],
+    "env_set": {
+        "TESSDATA_PREFIX": "$persist_dir\\tessdata",
+        "SCROLLVIEW_PATH": "$persist_dir\\tessdata"
+    },
+    "persist": "tessdata",
+    "post_install": [
+        "$langdir = versiondir tesseract-languages current $global",
+        "if (Test-Path $langdir) {",
+        "   env \"TESSDATA_PREFIX\" $global $langdir",
+        "}"
+    ],
+    "checkver": {
+        "url": "https://digi.bib.uni-mannheim.de/tesseract/?C=M;O=D",
+        "regex": "tesseract-ocr-w32-setup-v([\\w.-]+)\\.exe"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-w64-setup-v$version.exe#/dl.7z"
+            },
+            "32bit": {
+                "url": "https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-w32-setup-v$version.exe#/dl.7z"
+            }
+        }
+    }
+}
