@@ -1,0 +1,49 @@
+{
+    "version": "3.36",
+    "description": "A small utility that allows administration of MikroTik RouterOS using a fast and simple GUI.",
+    "homepage": "https://mikrotik.com/",
+    "license": "Unknown",
+    "architecture": {
+        "64bit": {
+            "url": "https://download.mikrotik.com/winbox/3.36/winbox64.exe",
+            "hash": "3d16e27571f0541a0e04ffa7c3f182e8aa2a2b260016038b80e0c23f8b4e6d30",
+            "bin": [
+                [
+                    "winbox64.exe",
+                    "winbox"
+                ]
+            ],
+            "shortcuts": [
+                [
+                    "winbox64.exe",
+                    "RouterOS Winbox"
+                ]
+            ]
+        },
+        "32bit": {
+            "url": "https://download.mikrotik.com/winbox/3.36/winbox.exe",
+            "hash": "3ea3770bbf89a11461502549d0af4b60737dc371b7df96c022eca606d189f12b",
+            "bin": "winbox.exe",
+            "shortcuts": [
+                [
+                    "winbox.exe",
+                    "RouterOS Winbox"
+                ]
+            ]
+        }
+    },
+    "checkver": {
+        "url": "https://mikrotik.com/download",
+        "regex": "WinBox ([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://download.mikrotik.com/winbox/$version/winbox64.exe"
+            },
+            "32bit": {
+                "url": "https://download.mikrotik.com/winbox/$version/winbox.exe"
+            }
+        }
+    }
+}

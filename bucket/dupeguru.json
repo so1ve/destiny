@@ -1,0 +1,53 @@
+{
+    "version": "4.3.0",
+    "description": "Duplicates file finder",
+    "homepage": "https://dupeguru.voltaicideas.net",
+    "license": "GPL-3.0-only",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/arsenetar/dupeguru/releases/download/4.3.0/dupeGuru_win64_4.3.0.exe#/dl.7z",
+            "hash": "7dc873a4863feab736b5bb87f49c165afebf18ea9ed875fa5c62aadc1014826d",
+            "bin": [
+                [
+                    "dupeguru-win64.exe",
+                    "dupeguru"
+                ]
+            ],
+            "shortcuts": [
+                [
+                    "dupeguru-win64.exe",
+                    "dupeGuru"
+                ]
+            ]
+        },
+        "32bit": {
+            "url": "https://github.com/arsenetar/dupeguru/releases/download/4.3.0/dupeGuru_win32_4.3.0.exe#/dl.7z",
+            "hash": "211d81184824a7482fc6e86473dad8712dc21fa32e1aac99438a369460654561",
+            "bin": [
+                [
+                    "dupeguru-win32.exe",
+                    "dupeguru"
+                ]
+            ],
+            "shortcuts": [
+                [
+                    "dupeguru-win32.exe",
+                    "dupeGuru"
+                ]
+            ]
+        }
+    },
+    "checkver": {
+        "github": "https://github.com/arsenetar/dupeguru"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/arsenetar/dupeguru/releases/download/$version/dupeGuru_win64_$version.exe#/dl.7z"
+            },
+            "32bit": {
+                "url": "https://github.com/arsenetar/dupeguru/releases/download/$version/dupeGuru_win32_$version.exe#/dl.7z"
+            }
+        }
+    }
+}

@@ -1,0 +1,39 @@
+{
+    "version": "2.0.0-2276",
+    "description": "Desktop client for Synology Surveillance Station",
+    "homepage": "https://www.synology.com/en-global/surveillance",
+    "license": {
+        "identifier": "Proprietary",
+        "url": "https://www.synology.com/en-global/company/legal/terms_EULA"
+    },
+    "architecture": {
+        "32bit": {
+            "url": "https://global.download.synology.com/download/Utility/SurveillanceStationClient/2.0.0-2276/Windows/i686/Synology%20Surveillance%20Station%20Client-2.0.0-2276_x86.zip",
+            "hash": "6faf80ea23c61108cdd7c803259666f0d1c74ed4dc2528534afade331b1f910e"
+        },
+        "64bit": {
+            "url": "https://global.download.synology.com/download/Utility/SurveillanceStationClient/2.0.0-2276/Windows/x86_64/Synology%20Surveillance%20Station%20Client-2.0.0-2276_x64.zip",
+            "hash": "d42dff74a997bd7b3361e2c8614bd72a23f0a082f41f7cb01fef51329f88bbb6"
+        }
+    },
+    "shortcuts": [
+        [
+            "bin\\SynologySurveillanceStationClient.exe",
+            "Synology Surveillance Station Client"
+        ]
+    ],
+    "checkver": {
+        "url": "https://archive.synology.com/download/Utility/SurveillanceStationClient",
+        "regex": "/download/Utility/SurveillanceStationClient/([\\d.-]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "32bit": {
+                "url": "https://global.download.synology.com/download/Utility/SurveillanceStationClient/$version/Windows/i686/Synology%20Surveillance%20Station%20Client-$version_x86.zip"
+            },
+            "64bit": {
+                "url": "https://global.download.synology.com/download/Utility/SurveillanceStationClient/$version/Windows/x86_64/Synology%20Surveillance%20Station%20Client-$version_x64.zip"
+            }
+        }
+    }
+}

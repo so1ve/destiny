@@ -1,0 +1,28 @@
+{
+    "version": "7.5.0",
+    "description": "The official command line client for Cloud Foundry",
+    "homepage": "https://github.com/cloudfoundry/cli",
+    "license": "Apache-2.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://cli.run.pivotal.io/stable?release=windows64-exe&version=7.5.0#/dl.7z",
+            "hash": "c90d3a1940cd2ebf4d91ad98adfd51cb3985cac2415caea07b95849c1654ebf0"
+        },
+        "32bit": {
+            "url": "https://cli.run.pivotal.io/stable?release=windows32-exe&version=7.5.0#/dl.7z",
+            "hash": "89cfd1be6fd5cb532adf2fd9f9ed04eacfe9f2012576dd21d8fa5943d4f8546c"
+        }
+    },
+    "bin": "cf.exe",
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://cli.run.pivotal.io/stable?release=windows64-exe&version=$version#/dl.7z"
+            },
+            "32bit": {
+                "url": "https://cli.run.pivotal.io/stable?release=windows32-exe&version=$version#/dl.7z"
+            }
+        }
+    }
+}

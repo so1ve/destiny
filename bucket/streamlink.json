@@ -1,0 +1,61 @@
+{
+    "version": "4.1.0-3",
+    "description": "A command-line utility that pipes video streams from various services into a video player.",
+    "homepage": "https://streamlink.github.io/",
+    "license": "BSD-2-Clause",
+    "notes": "You will find your config file here: '$dir\\config'. To customise it, read the docs here: https://streamlink.github.io/cli/config.html#syntax",
+    "suggest": {
+        "FFmpeg": [
+            "ffmpeg",
+            "ffmpeg-nightly"
+        ],
+        "VLC Player": "extras/vlc"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/streamlink/windows-builds/releases/download/4.1.0-3/streamlink-4.1.0-3-py310-x86_64.zip",
+            "hash": "eaa22bbd4838a0aa3c7f959191c825c049aafa74febb057ae602788db33c23cd",
+            "extract_dir": "streamlink-4.1.0-3-py310-x86_64"
+        },
+        "32bit": {
+            "url": "https://github.com/streamlink/windows-builds/releases/download/4.1.0-3/streamlink-4.1.0-3-py310-x86.zip",
+            "hash": "8abea98cc0c8384973768c08fc63dd80d3ecb655ce992deefc8825e11ceea870",
+            "extract_dir": "streamlink-4.1.0-3-py310-x86"
+        }
+    },
+    "pre_install": [
+        "if (!(Test-Path \"$persist_dir\\config\")) {",
+        "    if (Test-Path \"$env:APPDATA\\streamlink\\config\") {",
+        "        info 'Copying existing ''config'' from ''%APPDATA%\\streamlink\\config'''",
+        "        Copy-Item \"$env:APPDATA\\streamlink\\config\" \"$dir\\config\"",
+        "    } else {",
+        "        New-Item \"$dir\\config\" | Out-Null",
+        "    }",
+        "}"
+    ],
+    "bin": [
+        [
+            "bin\\streamlink.exe",
+            "streamlink",
+            "--ffmpeg-ffmpeg \"$dir\\ffmpeg\\ffmpeg.exe\" --config \"$dir\\config\""
+        ],
+        "bin\\streamlinkw.exe"
+    ],
+    "persist": "config",
+    "checkver": {
+        "url": "https://github.com/streamlink/windows-builds/releases/",
+        "regex": "tree/([\\d.\\-]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/streamlink/windows-builds/releases/download/$version/streamlink-$version-py310-x86_64.zip",
+                "extract_dir": "streamlink-$version-py310-x86_64"
+            },
+            "32bit": {
+                "url": "https://github.com/streamlink/windows-builds/releases/download/$version/streamlink-$version-py310-x86.zip",
+                "extract_dir": "streamlink-$version-py310-x86"
+            }
+        }
+    }
+}

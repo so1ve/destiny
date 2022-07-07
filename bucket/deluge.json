@@ -1,0 +1,26 @@
+{
+    "version": "2.1.0",
+    "description": "Lightweight, free, cross-platform BitTorrent client",
+    "homepage": "https://deluge-torrent.org",
+    "license": "GPL-3.0-only",
+    "url": "http://download.deluge-torrent.org/windows/deluge-2.1.0-win32-lt2.0-setup.exe#/dl.7z",
+    "hash": "013e1ee53110dd99ed55bc86aeb51fc02b8561eb5715d2a0c7c4280ca5cb2ae9",
+    "bin": [
+        "deluge-console.exe",
+        "deluge-web.exe",
+        "deluged.exe"
+    ],
+    "shortcuts": [
+        [
+            "deluge.exe",
+            "Deluge"
+        ]
+    ],
+    "checkver": {
+        "url": "http://download.deluge-torrent.org/windows/?C=M;O=D",
+        "regex": "deluge-([\\d._-]+)-win32(.+?(?=\\.exe))"
+    },
+    "autoupdate": {
+        "url": "http://download.deluge-torrent.org/windows/deluge-$version-win32$match2.exe#/dl.7z"
+    }
+}

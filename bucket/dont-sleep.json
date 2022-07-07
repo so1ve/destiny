@@ -1,0 +1,49 @@
+{
+    "version": "8.81",
+    "description": "A small program to prevent system Shutdown, Stand By, Turn Off, Restart, Hibernate.",
+    "homepage": "https://www.softwareok.com/?Download=DontSleep",
+    "license": {
+        "identifier": "Freeware",
+        "url": "https://www.softwareok.com/?seite=Microsoft/DontSleep/Eula"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://www.softwareok.com/Download/DontSleep_x64.zip",
+            "hash": "32e3130d45be1d4f3ff27fa7165f3cb18a0ddc5830a78faddf0fc39d02c14997",
+            "shortcuts": [
+                [
+                    "DontSleep_x64.exe",
+                    "DontSleep"
+                ]
+            ]
+        },
+        "32bit": {
+            "url": "https://www.softwareok.com/Download/DontSleep.zip",
+            "hash": "75d84621bd4d6899b8c4794896ab746bbe7131a0269a36465f457e7673c591a2",
+            "shortcuts": [
+                [
+                    "DontSleep.exe",
+                    "DontSleep"
+                ]
+            ]
+        }
+    },
+    "checkver": {
+        "url": "https://www.softwareok.com/?seite=Microsoft/DontSleep/History",
+        "regex": "version ([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://www.softwareok.com/Download/DontSleep_x64.zip"
+            },
+            "32bit": {
+                "url": "https://www.softwareok.com/Download/DontSleep.zip"
+            }
+        },
+        "hash": {
+            "url": "https://www.softwareok.com/?Download=DontSleep",
+            "regex": "$basename<div[^>]+><a[^>]+>$sha256<"
+        }
+    }
+}
