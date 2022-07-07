@@ -1,4 +1,4 @@
-# Dentiny
+# Destiny
 
 [![Tests](https://github.com/ScoopDestiny/destiny/actions/workflows/ci.yml/badge.svg)](https://github.com/ScoopDestiny/destiny/actions/workflows/ci.yml) [![Excavator](https://github.com/ScoopDestiny/destiny/actions/workflows/excavator.yml/badge.svg)](https://github.com/ScoopDestiny/destiny/actions/workflows/excavator.yml)
 
