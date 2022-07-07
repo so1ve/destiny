@@ -18,10 +18,13 @@ jobs:
       - name: Sync Versions
         run: |
           git clone https://github.com/so1ve/destiny_versions.git
-          cp -R ./versions/* ./destiny_versions/bucket
+          cp -R ./versions ./destiny_versions/bucket
+          dir
+          dir destiny_versions
+          dir destiny_versions/bucket
       - name: Push Versions
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GH_TOKEN }}
           directory: "./destiny_versions"
           repository: so1ve/destiny_versions
