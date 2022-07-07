@@ -18,7 +18,12 @@ jobs:
       - name: Sync Versions
         run: |
           git clone https://github.com/so1ve/destiny_versions.git
-          cp -R ./versions ./destiny_versions/bucket
+          rm -R ./destiny_versions/bucket
+          dir
+          dir destiny_versions
+          dir destiny_versions/bucket
+          cd destiny_versions
+          cp -Force -R ./versions ./destiny_versions/bucket
           dir
           dir destiny_versions
           dir destiny_versions/bucket
