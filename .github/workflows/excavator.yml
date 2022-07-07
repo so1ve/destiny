@@ -22,7 +22,6 @@ jobs:
           dir
           dir destiny_versions
           cp -Force -R ./versions ./destiny_versions/bucket
-          cd destiny_versions
           dir
           dir destiny_versions
           dir destiny_versions/bucket
