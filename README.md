@@ -9,6 +9,11 @@ How do I install these manifests?
 
 To add this bucket, run `scoop bucket add so1ve_destiny https://github.com/so1ve/destiny`. To install, do `scoop install <manifest>`.
 
+How do I install previous versions?
+---------------------------------
+
+See [destiny_versions](https://github.com/so1ve/destiny_versions).
+
 How do I contribute new manifests?
 ----------------------------------
 
