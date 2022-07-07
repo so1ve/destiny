@@ -21,7 +21,6 @@ jobs:
           rm -R ./destiny_versions/bucket
           dir
           dir destiny_versions
-          dir destiny_versions/bucket
           cd destiny_versions
           cp -Force -R ./versions ./destiny_versions/bucket
           dir
