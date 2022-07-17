@@ -11,34 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@main
       - name: Excavate
-<<<<<<< HEAD
         uses: ScoopInstaller/ScoopGithubActions@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SKIP_UPDATED: "1"
-=======
-        uses: ScoopDestiny/ScoopGithubActions@main
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SKIP_UPDATED: "1"
-      - name: Sync Versions
-        run: |
-          git clone https://github.com/ScoopDestiny/destiny_versions.git
-          rm -R ./destiny_versions/bucket
-          dir
-          dir destiny_versions
-          cp -Force -R ./versions ./destiny_versions/bucket
-          dir
-          dir destiny_versions
-          dir destiny_versions/bucket
-          cd destiny_versions
-          git add -A
-          git commit -m "sync versions"
-          cd ..
-      - name: Push Versions
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GH_TOKEN }}
-          directory: "./destiny_versions"
-          repository: ScoopDestiny/destiny_versions
->>>>>>> fc5f8ef86028c0447cc7b9a95141c00ed6cbc269
