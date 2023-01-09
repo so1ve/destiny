@@ -27,5 +27,16 @@
     "description": "yet another rss reader",
     "homepage": "https://github.com/nkanaev/yarr",
     "license": "MIT",
-    "version": "2.3"
+    "version": "2.3",
+    "installer": {
+        "script": [
+            "Remove-Item \"$dir\\db\" -Force -ErrorAction SilentlyContinue",
+            "Remove-Item \"$dir\\db.original\" -Force -ErrorAction SilentlyContinue"
+        ]
+    },
+    "uninstaller": {
+        "script": [
+            "Remove-Item \"$dir\" -Recurse -Force -ErrorAction SilentlyContinue"
+        ]
+    }
 }
