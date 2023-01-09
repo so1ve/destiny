@@ -12,11 +12,20 @@
             }
         }
     },
-    "bin": "yarr.exe",
+    "bin": [
+        [
+            "yarr.exe",
+            "yarr",
+            "-db",
+            "$persist_dir\\db\\storage.db"
+        ]
+    ],
+    "persist": [
+        "db"
+    ],
     "checkver": "github",
     "description": "yet another rss reader",
     "homepage": "https://github.com/nkanaev/yarr",
     "license": "MIT",
-    "notes": "the database of yarr is stored at %APPDATA%\\yarr",
     "version": "2.3"
 }
