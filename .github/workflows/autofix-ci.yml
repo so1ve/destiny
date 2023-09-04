@@ -13,7 +13,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Init and Test
+      - name: Format
         shell: pwsh
         run: |
           .\bin\formatjson.ps1
