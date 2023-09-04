@@ -20,9 +20,7 @@
             "$persist_dir\\db\\storage.db"
         ]
     ],
-    "persist": [
-        "db"
-    ],
+    "persist": "db",
     "checkver": "github",
     "description": "yet another rss reader",
     "homepage": "https://github.com/nkanaev/yarr",
@@ -35,8 +33,6 @@
         ]
     },
     "uninstaller": {
-        "script": [
-            "Remove-Item \"$dir\" -Recurse -Force -ErrorAction SilentlyContinue"
-        ]
+        "script": "Remove-Item \"$dir\" -Recurse -Force -ErrorAction SilentlyContinue"
     }
 }

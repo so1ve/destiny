@@ -9,7 +9,12 @@
             "hash": "1f93542edcc0b4f4b3b73bfc45290b207bcf69e4ba405ffa235c364f6d313c30"
         }
     },
-    "bin": [["yazi-x86_64-pc-windows-gnu.exe", "yazi"]],
+    "bin": [
+        [
+            "yazi-x86_64-pc-windows-gnu.exe",
+            "yazi"
+        ]
+    ],
     "checkver": "github",
     "autoupdate": {
         "architecture": {
@@ -19,4 +24,3 @@
         }
     }
 }
-
