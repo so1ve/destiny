@@ -12,9 +12,25 @@ jobs:
   autofix:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout Bucket
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
+          path: 'my_bucket'
+      - name: Checkout Scoop
+        uses: actions/checkout@v3
+        with:
+          repository: ScoopInstaller/Scoop
+          path: 'scoop_core'
       - name: Format
         shell: pwsh
         run: |
-          .\bin\formatjson.ps1
+          $env:SCOOP_HOME="$(Resolve-Path '.\scoop_core')"
+          .\my_bucket\bin\formatjson.ps1
+      - name: Cleanup
+        shell: pwsh
+        run: |
+          Copy-Item -Path "./my_bucket/*" -Destination "./" -Recurse
+          Remove-Item -Path "./my_bucket" -Recurse
+          Remove-Item -Path "./scoop_core" -Recurse
       - uses: autofix-ci/action@8bc06253bec489732e5f9c52884c7cace15c0160
