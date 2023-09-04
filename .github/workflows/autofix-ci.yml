@@ -1,0 +1,20 @@
+name: autofix.ci
+on:
+  push:
+    branches:
+      - master
+  pull_request: {}
+
+permissions:
+  contents: read
+
+jobs:
+  autofix:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Init and Test
+        shell: pwsh
+        run: |
+          .\bin\formatjson.ps1
+      - uses: autofix-ci/action@8bc06253bec489732e5f9c52884c7cace15c0160
